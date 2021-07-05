@@ -1,6 +1,6 @@
 
 #!/usr/bin/env python3
-#Code by rafli
+#Code by alvaro
 import random
 import socket
 import threading
